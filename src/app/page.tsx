@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 
 import { LatestPost } from "~/app/_components/post";
 import { auth } from "~/server/better-auth";
+import { authClient } from "~/server/better-auth/client";
 import { getSession } from "~/server/better-auth/server";
 import { api, HydrateClient } from "~/trpc/server";
 
@@ -11,13 +12,9 @@ export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
   const session = await getSession();
 
-  if (session) {
-    void api.post.getLatest.prefetch();
-  }
-
   return (
     <HydrateClient>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+      <main className="flex min-h-screen flex-col items-center justify-center bg-linear-to-b from-[#2e026d] to-[#15162c] text-white">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
           <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
             Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
@@ -61,19 +58,17 @@ export default async function Home() {
                     className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
                     formAction={async () => {
                       "use server";
-                      const res = await auth.api.signInSocial({
-                        body: {
-                          provider: "github",
-                          callbackURL: "/",
-                        },
+                      const { data, error } = await authClient.signIn.social({
+                        provider: "google",
                       });
-                      if (!res.url) {
-                        throw new Error("No URL returned from signInSocial");
+                      if (!data) {
+                        console.error(error?.message);
+                        throw new Error(error?.message);
                       }
-                      redirect(res.url);
+                      redirect(data.url!);
                     }}
                   >
-                    Sign in with Github
+                    Sign in with Google
                   </button>
                 </form>
               ) : (
@@ -95,7 +90,7 @@ export default async function Home() {
             </div>
           </div>
 
-          {session?.user && <LatestPost />}
+          {/*{session?.user && <LatestPost />}*/}
         </div>
       </main>
     </HydrateClient>
