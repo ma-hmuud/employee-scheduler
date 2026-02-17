@@ -13,8 +13,8 @@
 
 Build your tRPC procedures in this order:
 
-- [ ] Auth first - signup, login, session management
-- [ ] Organization setup - create org, invite users
+- [-] Auth first - signup, login, session management
+- [ ] Manager Setup - create manager accounts, assign employees
 - [ ] Shift CRUD - create, read, update, delete shifts (manager only)
 - [ ] Shift requests - submit request, approve/reject (split by role)
 - [ ] Availability - set employee availability
