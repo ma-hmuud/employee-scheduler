@@ -1,8 +1,13 @@
 # Employee Scheduler App - Development Plan
+
+---
+
 ## Todo
 
-- [-] create a app schema and relations
-- [ ] create a initial UI
+### Phase 1: Foundation (Where you are now ✓)
+
+- [ ] Tech stack setup (Next.js, tRPC, Drizzle, etc.)
+- [ ] Define your database schema in Prisma
 
 ### Phase 2: Core Data Layer (API routes)
 
