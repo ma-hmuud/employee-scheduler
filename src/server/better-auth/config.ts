@@ -18,6 +18,18 @@ export const auth = betterAuth({
   account: {
     skipStateCookieCheck: true,
   },
+  user: {
+    additionalFields: {
+      role: {
+        type: "string",
+      },
+    },
+  },
+  advanced: {
+    database: {
+      generateId: false,
+    },
+  },
 });
 
 export type Session = typeof auth.$Infer.Session;
