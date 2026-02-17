@@ -4,10 +4,10 @@
 
 ## Todo
 
-### Phase 1: Foundation (Where you are now ✓)
+### Phase 1: Foundation
 
-- [ ] Tech stack setup (Next.js, tRPC, Drizzle, etc.)
-- [ ] Define your database schema in Prisma
+- [-] Tech stack setup (Next.js, tRPC, Drizzle, etc.)
+- [-] Define your database schema in Prisma
 
 ### Phase 2: Core Data Layer (API routes)
 
