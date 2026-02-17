@@ -6,15 +6,15 @@
 
 ### Phase 1: Foundation
 
-- [-] Tech stack setup (Next.js, tRPC, Drizzle, etc.)
-- [-] Define your database schema in Prisma
+- [x] Tech stack setup (Next.js, tRPC, Drizzle, etc.)
+- [x] Define your database schema in Prisma
 
 ### Phase 2: Core Data Layer (API routes)
 
 Build your tRPC procedures in this order:
 
-- [-] Auth first - signup, login, session management
-- [-] Manager Setup - create manager accounts, assign employees
+- [x] Auth first - signup, login, session management
+- [x] Manager Setup - create manager accounts, assign employees
 - [ ] Shift CRUD - create, read, update, delete shifts (manager only)
 - [ ] Shift requests - submit request, approve/reject (split by role)
 - [ ] Availability - set employee availability
