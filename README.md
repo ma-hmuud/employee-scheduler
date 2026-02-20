@@ -7,7 +7,7 @@
 ### Phase 1: Foundation
 
 - [x] Tech stack setup (Next.js, tRPC, Drizzle, etc.)
-- [x] Define your database schema in Prisma
+- [x] Define your database schema in Drizzle
 
 ### Phase 2: Core Data Layer (API routes)
 
