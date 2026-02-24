@@ -7,7 +7,8 @@ export const getAvailabilityDb = async (employeeId: number) => {
   return db
     .select()
     .from(availability)
-    .where(eq(availability.employeeId, employeeId));
+    .where(eq(availability.employeeId, employeeId))
+    .then((res) => res[0]);
 };
 
 export const createAvailabilityDb = async (
