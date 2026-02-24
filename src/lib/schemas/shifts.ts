@@ -24,8 +24,10 @@ export const updateShiftSchema = baseShiftSchema
     id: z.number().int().positive("Manager ID must be a positive integer"),
     status: z.enum(["draft", "published", "cancelled", "filled"]),
   })
-  .refine((data) => data.endTime > data.startTime)
-  .partial();
+  .partial()
+  .refine(
+    (data) => data.startTime && data.endTime && data.endTime > data.startTime,
+  );
 
 export type ShiftInput = z.infer<typeof createShiftSchema>;
 export type UpdateShiftInput = z.infer<typeof updateShiftSchema>;
