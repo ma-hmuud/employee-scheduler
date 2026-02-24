@@ -17,7 +17,7 @@ Build your tRPC procedures in this order:
 - [x] Manager Setup - create manager accounts, assign employees
 - [x] Shift CRUD - create, read, update, delete shifts (manager only)
 - [x] Availability - set employee availability
-- [ ] Shift requests - submit request, approve/reject (split by role)
+- [x] Shift requests - submit request, approve/reject (split by role)
 
 ### Phase 3: UI Components (Feature by feature)
 
