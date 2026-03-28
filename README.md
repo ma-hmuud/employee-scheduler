@@ -23,7 +23,7 @@ Build your tRPC procedures in this order:
 
 Build one complete feature at a time, not all pages at once:
 
-- [x] Feature 1: Auth flow
+- [ ] Feature 1: Auth flow
 
 Login/signup pages → test → move on
 
